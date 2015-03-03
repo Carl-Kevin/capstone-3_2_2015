@@ -13,16 +13,16 @@ namespace Win.App.Server
     {
 
         internal static Form1 MainForm { get; set; }
-        internal static MainScreen frmMain { get; private set; }
-        internal static QuizL2Server frmQuizL2Server { get; private set; }
-        internal static QuizServerControl.QuizL3Server frmQuizL3Server { get; private set; }
-        internal static QuizServerControl.QClincherServer frmQClincherServer { get; private set; }
+        internal static MainScreen frmMain { get;  set; }
+        internal static QuizL2Server frmQuizL2Server { get;  set; }
+        internal static QuizServerControl.QuizL3Server frmQuizL3Server { get;  set; }
+        internal static QuizServerControl.QClincherServer frmQClincherServer { get;  set; }
 
         //Generic Quiz
-        internal static GQuizServerControl.GQuizEasy frmGQuizEasy { get; private set; }
-        internal static GQuizServerControl.GQuizAverage frmGQuizAverage { get; private set; }
-        internal static GQuizServerControl.GQuizDifficult frmGQuizDifficult { get; private set; }
-        internal static GQuizServerControl.GQuizClincher frmGQuizClincher { get; private set; }
+        internal static GQuizServerControl.GQuizEasy frmGQuizEasy { get;  set; }
+        internal static GQuizServerControl.GQuizAverage frmGQuizAverage { get;  set; }
+        internal static GQuizServerControl.GQuizDifficult frmGQuizDifficult { get;  set; }
+        internal static GQuizServerControl.GQuizClincher frmGQuizClincher { get;  set; }
 
         /// <summary>
         /// The main entry point for the application.

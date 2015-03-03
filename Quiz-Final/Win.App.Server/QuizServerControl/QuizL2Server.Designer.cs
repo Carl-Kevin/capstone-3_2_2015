@@ -295,6 +295,7 @@
             this.Name = "QuizL2Server";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quiz Level 2 - Server Control";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.QuizL2Server_FormClosing);
             this.Load += new System.EventHandler(this.QuizL2Server_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);

@@ -131,5 +131,14 @@ namespace Win.App.Server
 
         }
 
+        private void QuizL2Server_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            //because there is a chance the user  close the form by clicking the "X" button
+            //and closing the form will dispose that object
+            //this form is required on Hub so just hide it
+            this.Hide();
+            e.Cancel = true; // this cancels the close event.
+        }
+
     }
 }
