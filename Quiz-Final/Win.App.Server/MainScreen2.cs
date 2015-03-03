@@ -19,10 +19,9 @@ namespace Win.App.Server
 
         private void quizLevel1ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //Form1 form1 = new Form1();
-            //form1.Show();
 
             Program.MainForm.Show();
+
         }
 
         private void level1ToolStripMenuItem_Click(object sender, EventArgs e)

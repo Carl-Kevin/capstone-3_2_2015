@@ -12,7 +12,7 @@ namespace Win.App.Server
     static class Program
     {
 
-        internal static Form1 MainForm { get; private set; }
+        internal static Form1 MainForm { get; set; }
         internal static MainScreen frmMain { get; private set; }
         internal static QuizL2Server frmQuizL2Server { get; private set; }
         internal static QuizServerControl.QuizL3Server frmQuizL3Server { get; private set; }

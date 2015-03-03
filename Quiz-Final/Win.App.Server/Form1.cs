@@ -9,7 +9,7 @@ namespace Win.App.Server
     {
         public Form1()
         {
-            CheckForIllegalCrossThreadCalls = false;
+            //CheckForIllegalCrossThreadCalls = false;
             InitializeComponent();
         }
 
@@ -18,7 +18,7 @@ namespace Win.App.Server
             SetupQuiz();
         }
 
-         
+
         private IHubContext _hubContext;
         public IHubContext HubContext
         {
@@ -61,8 +61,8 @@ namespace Win.App.Server
             }
             set { _scoreManager = value; }
         }
- 
-	
+
+
 
         public void WriteToLog(string logMessage)
         {
@@ -77,7 +77,7 @@ namespace Win.App.Server
         }
 
 
-        public void UpdateAndReloadScore(string  userName, int pointsAdded)
+        public void UpdateAndReloadScore(string userName, int pointsAdded)
         {
             ScoreManager.UpdateScore(userName, pointsAdded);
             ContestantScoreDataGrid.DataSource = ScoreManager.GetContestantScores();
@@ -110,7 +110,7 @@ namespace Win.App.Server
 
         }
 
-       
+
         private void DataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             var grid = sender as DataGridView;
@@ -122,6 +122,15 @@ namespace Win.App.Server
                 HubContext.Clients.All.DisplayQuestion(quiz);
             }
 
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            //because there is a chance the user  close the form by clicking the "X" button
+            //and closing the form will dispose that object
+            //this form is required on Hub so just hide it
+            this.Hide();
+            e.Cancel = true; // this cancels the close event.
         }
 
 
