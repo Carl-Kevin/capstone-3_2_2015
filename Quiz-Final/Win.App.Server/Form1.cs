@@ -76,17 +76,40 @@ namespace Win.App.Server
             listView1.Items.Add(logMessage);
         }
 
+        public void UpdateContestantScore()
+        {
+            if (listView1.InvokeRequired)
+            {
+                this.Invoke((Action)(UpdateContestantScore));
+                return;
+            }
+
+            //always clear the list view
+            ContestantListView.Items.Clear();
+
+            foreach (var score in ScoreManager.GetContestantScores())
+            {
+                var listViewItem = new ListViewItem(score.ContestantName);
+                listViewItem.SubItems.Add((score.Score ?? 0).ToString("N0"));
+
+                ContestantListView.Items.Add(listViewItem);
+
+            }
+
+        }
+
 
         public void UpdateAndReloadScore(string userName, int pointsAdded)
         {
             ScoreManager.UpdateScore(userName, pointsAdded);
-            ContestantScoreDataGrid.DataSource = ScoreManager.GetContestantScores();
+            UpdateContestantScore();
         }
 
         private void SetupQuiz()
         {
             EasyDataGrid.DataSource = QuestionManager.GetQuizL1ByDifficulty(1);
-            ContestantScoreDataGrid.DataSource = ScoreManager.GetContestantScores();
+            UpdateContestantScore();
+
         }
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
