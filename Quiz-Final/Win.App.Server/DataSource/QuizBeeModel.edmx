@@ -5,6 +5,15 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="QuizBeeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AdminAccount">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="FullName" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
         <EntityType Name="Clincher">
           <Key>
             <PropertyRef Name="QuestionNumber" />
@@ -92,6 +101,7 @@
           <Property Name="DifficultyLevel" Type="int" Nullable="false" />
         </EntityType>
         <EntityContainer Name="QuizBeeModelStoreContainer">
+          <EntitySet Name="AdminAccount" EntityType="Self.AdminAccount" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Clincher" EntityType="Self.Clincher" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ContestantScore" EntityType="Self.ContestantScore" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="GContestantScore" EntityType="Self.GContestantScore" Schema="dbo" store:Type="Tables" />
@@ -112,6 +122,7 @@
           <EntitySet Name="Clinchers" EntityType="QuizBeeModel.Clincher" />
           <EntitySet Name="GQuizs" EntityType="QuizBeeModel.GQuiz" />
           <EntitySet Name="GContestantScores" EntityType="QuizBeeModel.GContestantScore" />
+          <EntitySet Name="AdminAccounts" EntityType="QuizBeeModel.AdminAccount" />
           </EntityContainer>
         <EntityType Name="ContestantScore">
           <Key>
@@ -198,6 +209,15 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="ContestantName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Score" Type="Int32" />
+        </EntityType>
+        <EntityType Name="AdminAccount">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FullName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -294,6 +314,16 @@
               <MappingFragment StoreEntitySet="GContestantScore">
                 <ScalarProperty Name="Score" ColumnName="Score" />
                 <ScalarProperty Name="ContestantName" ColumnName="ContestantName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AdminAccounts">
+            <EntityTypeMapping TypeName="QuizBeeModel.AdminAccount">
+              <MappingFragment StoreEntitySet="AdminAccount">
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

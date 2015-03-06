@@ -46,22 +46,40 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminAccount.cs">
+      <DependentUpon>QuizBeeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Clincher.cs">
+      <DependentUpon>QuizBeeModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="ContestantScore.cs">
       <DependentUpon>QuizBeeModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DifficultyLevel.cs" />
+    <Compile Include="GContestantScore.cs">
+      <DependentUpon>QuizBeeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GQuiz.cs">
+      <DependentUpon>QuizBeeModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Quiz.cs">
-      <DependentUpon>QuizBeeModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="QuizBeeModel1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <DependentUpon>QuizBeeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="QuizL1.cs">
+      <DependentUpon>QuizBeeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="QuizL2.cs">
+      <DependentUpon>QuizBeeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="QuizL3.cs">
       <DependentUpon>QuizBeeModel.tt</DependentUpon>
     </Compile>
   </ItemGroup>

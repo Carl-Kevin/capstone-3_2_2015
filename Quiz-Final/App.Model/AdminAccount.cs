@@ -12,10 +12,11 @@ namespace App.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class ContestantScore
+    public partial class AdminAccount
     {
         public int Id { get; set; }
-        public string ContestantName { get; set; }
-        public Nullable<int> Score { get; set; }
+        public string UserName { get; set; }
+        public string Password { get; set; }
+        public string FullName { get; set; }
     }
 }

@@ -12,7 +12,7 @@ namespace App.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class ContestantScore
+    public partial class GContestantScore
     {
         public int Id { get; set; }
         public string ContestantName { get; set; }

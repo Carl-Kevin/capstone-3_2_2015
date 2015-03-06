@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Threading;
+using System.Windows.Forms;
 
 namespace Win.App.Server
 {
@@ -27,22 +20,33 @@ namespace Win.App.Server
             Application.Run(new SplashScreen());
         }
 
-        string username = "Myusername";
 
-        string password = "Mypassword";
+        private AdminAccountManager _adminAccountManager;
+        public AdminAccountManager AdminAccountManager
+        {
+            get
+            {
+                if (_adminAccountManager == null)
+                {
+                    _adminAccountManager = new AdminAccountManager();
+                }
+
+                return _adminAccountManager;
+            }
+            set { _adminAccountManager = value; }
+        }
+
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (txtUsername.Text == username && txtPassword.Text == password)
+
+            var isLoggedin = AdminAccountManager.Login(txtUsername.Text, txtPassword.Text);
+
+            if (isLoggedin)
             {
                 MessageBox.Show("Welcome to the system Admin", "Welcome", MessageBoxButtons.OK, MessageBoxIcon.None);
                 this.Close();
-                //MainScreen frmMain = new MainScreen();
-                //frmMain.Show();
-
             }
-
-
             else
             {
                 MessageBox.Show("Error : Make sure you input a valid Username and Password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -52,15 +56,15 @@ namespace Win.App.Server
         private void btnCancel_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Are you sure you want to QUIT?", "Information", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
-            if (System.Windows.Forms.Application.MessageLoop)
+            if (Application.MessageLoop)
             {
-                System.Windows.Forms.Application.Exit();
+                Application.Exit();
             }
 
             else
             {
 
-                System.Environment.Exit(1);
+                Environment.Exit(1);
             }
         }
 

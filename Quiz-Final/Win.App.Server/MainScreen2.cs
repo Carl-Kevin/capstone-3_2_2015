@@ -112,5 +112,10 @@ namespace Win.App.Server
             Participants frmParticipants = new Participants();
             frmParticipants.Show();
         }
+
+        private void RestoreToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new ChangePassword().ShowDialog();
+        }
     }
 }

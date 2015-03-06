@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.UserNameTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.OldPasswordTextbox = new System.Windows.Forms.TextBox();
+            this.NewPasswordTextbox = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -49,12 +49,12 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "Change the Password:";
             // 
-            // textBox1
+            // UserNameTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(351, 95);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(222, 20);
-            this.textBox1.TabIndex = 8;
+            this.UserNameTextBox.Location = new System.Drawing.Point(351, 95);
+            this.UserNameTextBox.Name = "UserNameTextBox";
+            this.UserNameTextBox.Size = new System.Drawing.Size(222, 20);
+            this.UserNameTextBox.TabIndex = 8;
             // 
             // label2
             // 
@@ -86,19 +86,21 @@
             this.label4.TabIndex = 11;
             this.label4.Text = "New Password:";
             // 
-            // textBox2
+            // OldPasswordTextbox
             // 
-            this.textBox2.Location = new System.Drawing.Point(351, 127);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(222, 20);
-            this.textBox2.TabIndex = 12;
+            this.OldPasswordTextbox.Location = new System.Drawing.Point(351, 127);
+            this.OldPasswordTextbox.Name = "OldPasswordTextbox";
+            this.OldPasswordTextbox.PasswordChar = '*';
+            this.OldPasswordTextbox.Size = new System.Drawing.Size(222, 20);
+            this.OldPasswordTextbox.TabIndex = 12;
             // 
-            // textBox3
+            // NewPasswordTextbox
             // 
-            this.textBox3.Location = new System.Drawing.Point(351, 165);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(222, 20);
-            this.textBox3.TabIndex = 13;
+            this.NewPasswordTextbox.Location = new System.Drawing.Point(351, 165);
+            this.NewPasswordTextbox.Name = "NewPasswordTextbox";
+            this.NewPasswordTextbox.PasswordChar = '*';
+            this.NewPasswordTextbox.Size = new System.Drawing.Size(222, 20);
+            this.NewPasswordTextbox.TabIndex = 13;
             // 
             // button1
             // 
@@ -108,6 +110,7 @@
             this.button1.TabIndex = 14;
             this.button1.Text = "SAVE SETTINGS";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -117,6 +120,7 @@
             this.button2.TabIndex = 15;
             this.button2.Text = "CANCEL";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // ChangePassword
             // 
@@ -125,12 +129,12 @@
             this.ClientSize = new System.Drawing.Size(790, 311);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.NewPasswordTextbox);
+            this.Controls.Add(this.OldPasswordTextbox);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.UserNameTextBox);
             this.Controls.Add(this.label1);
             this.Name = "ChangePassword";
             this.Text = "ChangePassword";
@@ -142,12 +146,12 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox UserNameTextBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox OldPasswordTextbox;
+        private System.Windows.Forms.TextBox NewPasswordTextbox;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
     }

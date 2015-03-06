@@ -76,7 +76,7 @@
             this.participantsToolStripMenuItem1.BackColor = System.Drawing.Color.Firebrick;
             this.participantsToolStripMenuItem1.ForeColor = System.Drawing.Color.Gold;
             this.participantsToolStripMenuItem1.Name = "participantsToolStripMenuItem1";
-            this.participantsToolStripMenuItem1.Size = new System.Drawing.Size(136, 22);
+            this.participantsToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.participantsToolStripMenuItem1.Text = "Participants";
             // 
             // level3ToolStripMenuItem
@@ -242,7 +242,7 @@
             this.clincherRoundToolStripMenuItem2});
             this.quizToolStripMenuItem5.ForeColor = System.Drawing.Color.Gold;
             this.quizToolStripMenuItem5.Name = "quizToolStripMenuItem5";
-            this.quizToolStripMenuItem5.Size = new System.Drawing.Size(136, 22);
+            this.quizToolStripMenuItem5.Size = new System.Drawing.Size(152, 22);
             this.quizToolStripMenuItem5.Text = "Quiz";
             // 
             // level1ToolStripMenuItem1
@@ -286,7 +286,7 @@
             this.scoreBoardToolStripMenuItem1.BackColor = System.Drawing.Color.Firebrick;
             this.scoreBoardToolStripMenuItem1.ForeColor = System.Drawing.Color.Gold;
             this.scoreBoardToolStripMenuItem1.Name = "scoreBoardToolStripMenuItem1";
-            this.scoreBoardToolStripMenuItem1.Size = new System.Drawing.Size(136, 22);
+            this.scoreBoardToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.scoreBoardToolStripMenuItem1.Text = "ScoreBoard";
             this.scoreBoardToolStripMenuItem1.Click += new System.EventHandler(this.scoreBoardToolStripMenuItem1_Click);
             // 
@@ -307,6 +307,7 @@
             this.RestoreToolStripMenuItem.Name = "RestoreToolStripMenuItem";
             this.RestoreToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.RestoreToolStripMenuItem.Text = "Account Setting";
+            this.RestoreToolStripMenuItem.Click += new System.EventHandler(this.RestoreToolStripMenuItem_Click);
             // 
             // restoreToolStripMenuItem1
             // 

@@ -132,6 +132,7 @@
     <Compile Include="AddQuizLevel3.Designer.cs">
       <DependentUpon>AddQuizLevel3.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminAccountManager.cs" />
     <Compile Include="Backup.cs">
       <SubType>Form</SubType>
     </Compile>

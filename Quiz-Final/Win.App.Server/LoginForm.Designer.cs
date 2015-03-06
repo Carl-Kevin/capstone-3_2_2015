@@ -93,12 +93,11 @@
             // 
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.Location = new System.Drawing.Point(192, 193);
-            this.txtPassword.Multiline = true;
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.ShortcutsEnabled = false;
-            this.txtPassword.Size = new System.Drawing.Size(272, 33);
+            this.txtPassword.Size = new System.Drawing.Size(272, 31);
             this.txtPassword.TabIndex = 29;
-            this.txtPassword.Text = "Mypassword";
             this.txtPassword.UseSystemPasswordChar = true;
             // 
             // txtUsername
@@ -110,7 +109,6 @@
             this.txtUsername.ShortcutsEnabled = false;
             this.txtUsername.Size = new System.Drawing.Size(272, 33);
             this.txtUsername.TabIndex = 28;
-            this.txtUsername.Text = "Myusername";
             this.txtUsername.WordWrap = false;
             // 
             // Label2
