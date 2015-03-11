@@ -16,6 +16,7 @@ namespace App.Model
     {
         public int Id { get; set; }
         public string ContestantName { get; set; }
-        public byte[] Answer { get; set; }
+        public int QuestionNumber { get; set; }
+        public string Answer { get; set; }
     }
 }

@@ -106,7 +106,8 @@
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ContestantName" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Answer" Type="varbinary" MaxLength="250" Nullable="false" />
+          <Property Name="QuestionNumber" Type="int" Nullable="false" />
+          <Property Name="Answer" Type="varchar" MaxLength="250" />
         </EntityType>
         <EntityContainer Name="QuizBeeModelStoreContainer">
           <EntitySet Name="AdminAccount" EntityType="Self.AdminAccount" Schema="dbo" store:Type="Tables" />
@@ -235,7 +236,8 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="ContestantName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Answer" Type="Binary" Nullable="false" MaxLength="250" FixedLength="false" />
+          <Property Name="QuestionNumber" Type="Int32" Nullable="false" />
+          <Property Name="Answer" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -350,6 +352,7 @@
             <EntityTypeMapping TypeName="QuizBeeModel.TallySheet">
               <MappingFragment StoreEntitySet="TallySheet">
                 <ScalarProperty Name="Answer" ColumnName="Answer" />
+                <ScalarProperty Name="QuestionNumber" ColumnName="QuestionNumber" />
                 <ScalarProperty Name="ContestantName" ColumnName="ContestantName" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>

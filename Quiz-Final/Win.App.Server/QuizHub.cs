@@ -17,8 +17,8 @@ namespace Win.App.Server
             var message = string.Format("Connected user : {0}", userName);
             Program.MainForm.WriteToLog(message);
 
-            Program.MainForm.UpdateAndReloadScore(userName, 0);//we might even aler the UI to refresh the score
-            
+            Program.MainForm.UpdateAndReloadScore(userName, 0, null, string.Empty);//we might even aler the UI to refresh the score
+
             return base.OnConnected();
         }
 
@@ -38,8 +38,15 @@ namespace Win.App.Server
 
             if (answer.Equals(correctAnswer, StringComparison.OrdinalIgnoreCase))
             {
-               Program.MainForm.UpdateAndReloadScore(userName, 1);//we might even aler the UI to refresh the score
+                Program.MainForm.UpdateAndReloadScore(userName, 1, quiz.QuestionNumber, answer);
+                    //we might even aler the UI to refresh the score
             }
+            else
+            {
+                Program.MainForm.UpdateAndReloadScore(userName, 0, quiz.QuestionNumber, answer);//we might even aler the UI to refresh the score
+                
+            }
+
 
             //NOTE: i guess there is no need for this log
             var message = string.Format("{0} from {1} correct: {2}", answer, userName, correctAnswer);

@@ -79,8 +79,10 @@ namespace Win.App.Client
 
         }
 
+        private QuizL1 _currentQuiz;
         public void DisplayQuestion(QuizL1 obj)
         {
+            _currentQuiz = obj;
             QuestionLabel.Text = obj.Questions;
             radioButton1.Text = obj.Option1;
             radioButton2.Text = obj.Option2;
@@ -167,7 +169,8 @@ namespace Win.App.Client
             var quiz = new QuizL1()
             {
                 Questions = QuestionLabel.Text,
-                AnswerKey = CorrectLabel.Text
+                AnswerKey = CorrectLabel.Text,
+                QuestionNumber = _currentQuiz.QuestionNumber
             };
 
 

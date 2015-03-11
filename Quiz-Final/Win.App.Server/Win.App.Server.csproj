@@ -280,6 +280,12 @@
       <DependentUpon>SplashScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
+    <Compile Include="TallySheetScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TallySheetScreen.Designer.cs">
+      <DependentUpon>TallySheetScreen.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AddGQuiz.resx">
       <DependentUpon>AddGQuiz.cs</DependentUpon>
     </EmbeddedResource>
@@ -367,6 +373,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SplashScreen.resx">
       <DependentUpon>SplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TallySheetScreen.resx">
+      <DependentUpon>TallySheetScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="DataSource\QuizBeeModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>

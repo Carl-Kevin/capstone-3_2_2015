@@ -55,7 +55,7 @@ namespace Win.App.Server
                 //then just update the score
                 var newScore = contestantScore.Score + pointsAdded; //get first the previous score then add the pointsadded
                 contestantScore.Score = newScore; //set the new score
-              
+
             }
 
             Context.ContestantScores.AddOrUpdate(contestantScore); //this will add if it does not exist or just update if exists
@@ -79,5 +79,28 @@ namespace Win.App.Server
             return Context.GContestantScores.ToList();
         }
 
+
+
+        public void UpdateTallySheet(string contestName, int questionNumber, string answerKey)
+        {
+            //look for the tally sheet by contestant and question number
+            var tallySheet = Context.TallySheets.FirstOrDefault(m => m.ContestantName == contestName && m.QuestionNumber == questionNumber);
+
+
+            if (tallySheet == null)
+            {
+                //if the tallysheet is null, then create a new instance of tallysheet
+                tallySheet = Context.TallySheets.Create();
+            }
+
+            tallySheet.ContestantName = contestName; //set the name
+            tallySheet.Answer = answerKey;
+            tallySheet.QuestionNumber = questionNumber;
+
+            Context.TallySheets.AddOrUpdate(tallySheet); //this will add if it does not exist or just update if exists
+            Context.SaveChanges(); //save the changes on database
+
+
+        }
     }
 }
