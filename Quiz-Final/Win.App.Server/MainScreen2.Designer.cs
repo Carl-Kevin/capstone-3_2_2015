@@ -66,6 +66,7 @@
             this.ViewParticipantsbtn = new System.Windows.Forms.Button();
             this.Backbtn = new System.Windows.Forms.Button();
             this.MainScrnPanel = new System.Windows.Forms.Panel();
+            this.tallySheetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox2)).BeginInit();
             this.MainScrnPanel.SuspendLayout();
@@ -94,7 +95,7 @@
             this.ParticipantsToolStripMenuItem});
             this.NewToolStripMenuItem.ForeColor = System.Drawing.Color.Gold;
             this.NewToolStripMenuItem.Name = "NewToolStripMenuItem";
-            this.NewToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.NewToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.NewToolStripMenuItem.Text = "&Add";
             // 
             // QuizToolStripMenuItem
@@ -105,7 +106,7 @@
             this.level3ToolStripMenuItem,
             this.clincherRoundToolStripMenuItem1});
             this.QuizToolStripMenuItem.Name = "QuizToolStripMenuItem";
-            this.QuizToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.QuizToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.QuizToolStripMenuItem.Text = "&Quiz";
             // 
             // level1ToolStripMenuItem
@@ -132,7 +133,7 @@
             // ParticipantsToolStripMenuItem
             // 
             this.ParticipantsToolStripMenuItem.Name = "ParticipantsToolStripMenuItem";
-            this.ParticipantsToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.ParticipantsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.ParticipantsToolStripMenuItem.Text = "Participants";
             this.ParticipantsToolStripMenuItem.Click += new System.EventHandler(this.RegistrationToolStripMenuItem_Click);
             // 
@@ -160,7 +161,7 @@
             this.clincherRoundToolStripMenuItem});
             this.beginQuizToolStripMenuItem.ForeColor = System.Drawing.Color.Gold;
             this.beginQuizToolStripMenuItem.Name = "beginQuizToolStripMenuItem";
-            this.beginQuizToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.beginQuizToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.beginQuizToolStripMenuItem.Text = "Begin Quiz";
             // 
             // quizLevel1ToolStripMenuItem
@@ -196,14 +197,14 @@
             this.ToolStripSeparator1.BackColor = System.Drawing.Color.Firebrick;
             this.ToolStripSeparator1.ForeColor = System.Drawing.Color.Gold;
             this.ToolStripSeparator1.Name = "ToolStripSeparator1";
-            this.ToolStripSeparator1.Size = new System.Drawing.Size(135, 6);
+            this.ToolStripSeparator1.Size = new System.Drawing.Size(149, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.BackColor = System.Drawing.Color.Firebrick;
             this.exitToolStripMenuItem.ForeColor = System.Drawing.Color.Gold;
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.exitToolStripMenuItem.Text = "&Exit";
             // 
             // MenuStrip1
@@ -226,6 +227,7 @@
             this.viewToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.quizToolStripMenuItem5,
             this.scoreBoardToolStripMenuItem1,
+            this.tallySheetToolStripMenuItem,
             this.participantsToolStripMenuItem1});
             this.viewToolStripMenuItem1.ForeColor = System.Drawing.Color.Gold;
             this.viewToolStripMenuItem1.Name = "viewToolStripMenuItem1";
@@ -408,6 +410,13 @@
             this.MainScrnPanel.Size = new System.Drawing.Size(140, 345);
             this.MainScrnPanel.TabIndex = 52;
             // 
+            // tallySheetToolStripMenuItem
+            // 
+            this.tallySheetToolStripMenuItem.Name = "tallySheetToolStripMenuItem";
+            this.tallySheetToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.tallySheetToolStripMenuItem.Text = "TallySheet";
+            this.tallySheetToolStripMenuItem.Click += new System.EventHandler(this.tallySheetToolStripMenuItem_Click);
+            // 
             // MainScreen2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -470,5 +479,6 @@
         private System.Windows.Forms.Button ViewParticipantsbtn;
         private System.Windows.Forms.Button Backbtn;
         private System.Windows.Forms.Panel MainScrnPanel;
+        private System.Windows.Forms.ToolStripMenuItem tallySheetToolStripMenuItem;
     }
 }

@@ -81,26 +81,5 @@ namespace Win.App.Server
 
 
 
-        public void UpdateTallySheet(string contestName, int questionNumber, string answerKey)
-        {
-            //look for the tally sheet by contestant and question number
-            var tallySheet = Context.TallySheets.FirstOrDefault(m => m.ContestantName == contestName && m.QuestionNumber == questionNumber);
-
-
-            if (tallySheet == null)
-            {
-                //if the tallysheet is null, then create a new instance of tallysheet
-                tallySheet = Context.TallySheets.Create();
-            }
-
-            tallySheet.ContestantName = contestName; //set the name
-            tallySheet.Answer = answerKey;
-            tallySheet.QuestionNumber = questionNumber;
-
-            Context.TallySheets.AddOrUpdate(tallySheet); //this will add if it does not exist or just update if exists
-            Context.SaveChanges(); //save the changes on database
-
-
-        }
     }
 }

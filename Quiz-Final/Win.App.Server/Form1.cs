@@ -62,6 +62,8 @@ namespace Win.App.Server
             set { _scoreManager = value; }
         }
 
+       
+	
 
 
         public void WriteToLog(string logMessage)
@@ -102,9 +104,11 @@ namespace Win.App.Server
         public void UpdateAndReloadScore(string userName, int pointsAdded, int? questionNumber, string answer)
         {
             ScoreManager.UpdateScore(userName, pointsAdded);
-            if (questionNumber != null) //update only the tally sheet if the qestion number is available
-                ScoreManager.UpdateTallySheet(userName, questionNumber.Value, answer); //update the tallysheet
-
+            if (questionNumber != null)
+            {
+                //refresh the tally sheet
+                Program.TallySheetScreen.RefreshTallyScore(userName, questionNumber.Value, answer);
+            }
             UpdateContestantScore();
         }
 

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using App.Model;
 using Win.App.Server.DataSource;
@@ -9,13 +10,13 @@ namespace Win.App.Server
     {
 
         private QuizBeeEntities _context;
-        private QuizBeeEntities Context
+        public QuizBeeEntities Context
         {
             get
             {
                 if (_context == null)
                 {
-                    _context = new QuizBeeEntities(); 
+                    _context = new QuizBeeEntities();
                 }
 
                 return _context;
@@ -53,5 +54,45 @@ namespace Win.App.Server
         {
             return Context.GQuizs.Where(m => m.DifficultyLevel == difficultyLevel).ToList();
         }
+
+
+        public string GetQuestionByQuestionNumber(int questionNumber)
+        {
+            //look for all table with question number
+            //if found just exit immidiately
+            var quizL1 = Context.QuizL1.FirstOrDefault(m => m.QuestionNumber == questionNumber);
+            if (quizL1 != null)
+            {
+                return string.Format("{0} - {1}", quizL1.QuestionNumber, quizL1.Questions);
+            }
+
+
+            //continue looking for next level if the question number does not exist from previous table
+            var quizL2 = Context.QuizL2.FirstOrDefault(m => m.QuestionNumber == questionNumber);
+            if (quizL2 != null)
+            {
+                return string.Format("{0} - {1}", quizL2.QuestionNumber, quizL2.Questions);
+            }
+
+            //continue looking for next level if the question number does not exist from previous table
+            var quizL3 = Context.QuizL2.FirstOrDefault(m => m.QuestionNumber == questionNumber);
+            if (quizL3 != null)
+            {
+                return string.Format("{0} - {1}", quizL3.QuestionNumber, quizL3.Questions);
+            }
+
+            //continue looking for next level if the question number does not exist from previous table
+            var quizClincher = Context.QuizL2.FirstOrDefault(m => m.QuestionNumber == questionNumber);
+            if (quizClincher != null)
+            {
+                return string.Format("{0} - {1}", quizClincher.QuestionNumber, quizClincher.Questions);
+            }
+
+            throw new InvalidOperationException("The question number does not exist now!");
+
+        }
+
+
+
     }
 }

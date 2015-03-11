@@ -117,5 +117,10 @@ namespace Win.App.Server
         {
             new ChangePassword().ShowDialog();
         }
+
+        private void tallySheetToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Program.TallySheetScreen.Show();
+        }
     }
 }

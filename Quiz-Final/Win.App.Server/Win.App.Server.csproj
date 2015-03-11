@@ -280,6 +280,7 @@
       <DependentUpon>SplashScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
+    <Compile Include="TallySheetManager.cs" />
     <Compile Include="TallySheetScreen.cs">
       <SubType>Form</SubType>
     </Compile>

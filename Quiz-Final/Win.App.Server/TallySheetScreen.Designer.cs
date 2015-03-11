@@ -28,37 +28,39 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ContestantListView = new System.Windows.Forms.ListView();
+            this.TallySheetListView = new System.Windows.Forms.ListView();
             this.SuspendLayout();
             // 
-            // ContestantListView
+            // TallySheetListView
             // 
-            this.ContestantListView.AllowColumnReorder = true;
-            this.ContestantListView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ContestantListView.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ContestantListView.FullRowSelect = true;
-            this.ContestantListView.GridLines = true;
-            this.ContestantListView.Location = new System.Drawing.Point(0, 0);
-            this.ContestantListView.Name = "ContestantListView";
-            this.ContestantListView.Size = new System.Drawing.Size(1001, 520);
-            this.ContestantListView.TabIndex = 9;
-            this.ContestantListView.UseCompatibleStateImageBehavior = false;
-            this.ContestantListView.View = System.Windows.Forms.View.Details;
+            this.TallySheetListView.AllowColumnReorder = true;
+            this.TallySheetListView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TallySheetListView.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TallySheetListView.FullRowSelect = true;
+            this.TallySheetListView.GridLines = true;
+            this.TallySheetListView.Location = new System.Drawing.Point(0, 0);
+            this.TallySheetListView.Name = "TallySheetListView";
+            this.TallySheetListView.Size = new System.Drawing.Size(1001, 520);
+            this.TallySheetListView.TabIndex = 9;
+            this.TallySheetListView.UseCompatibleStateImageBehavior = false;
+            this.TallySheetListView.View = System.Windows.Forms.View.Details;
             // 
             // TallySheetScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1001, 520);
-            this.Controls.Add(this.ContestantListView);
+            this.Controls.Add(this.TallySheetListView);
             this.Name = "TallySheetScreen";
             this.Text = "TallySheetScreen";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.TallySheetScreen_FormClosing);
+            this.Load += new System.EventHandler(this.TallySheetScreen_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.ListView ContestantListView;
+        private System.Windows.Forms.ListView TallySheetListView;
     }
 }
