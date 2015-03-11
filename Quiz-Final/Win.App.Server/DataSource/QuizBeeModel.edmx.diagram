@@ -13,6 +13,7 @@
         <EntityTypeShape EntityType="QuizBeeModel.GQuiz" Width="1.5" PointX="10.625" PointY="0.625" />
         <EntityTypeShape EntityType="QuizBeeModel.GContestantScore" Width="1.5" PointX="2.875" PointY="2.5" />
         <EntityTypeShape EntityType="QuizBeeModel.AdminAccount" Width="1.5" PointX="0.75" PointY="5.75" />
+        <EntityTypeShape EntityType="QuizBeeModel.TallySheet" Width="1.5" PointX="3.375" PointY="5.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -100,6 +100,14 @@
           <Property Name="AnswerKey" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="DifficultyLevel" Type="int" Nullable="false" />
         </EntityType>
+        <EntityType Name="TallySheet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ContestantName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Answer" Type="varbinary" MaxLength="250" Nullable="false" />
+        </EntityType>
         <EntityContainer Name="QuizBeeModelStoreContainer">
           <EntitySet Name="AdminAccount" EntityType="Self.AdminAccount" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Clincher" EntityType="Self.Clincher" Schema="dbo" store:Type="Tables" />
@@ -109,6 +117,7 @@
           <EntitySet Name="QuizL1" EntityType="Self.QuizL1" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="QuizL2" EntityType="Self.QuizL2" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="QuizL3" EntityType="Self.QuizL3" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TallySheet" EntityType="Self.TallySheet" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -123,6 +132,7 @@
           <EntitySet Name="GQuizs" EntityType="QuizBeeModel.GQuiz" />
           <EntitySet Name="GContestantScores" EntityType="QuizBeeModel.GContestantScore" />
           <EntitySet Name="AdminAccounts" EntityType="QuizBeeModel.AdminAccount" />
+          <EntitySet Name="TallySheets" EntityType="QuizBeeModel.TallySheet" />
           </EntityContainer>
         <EntityType Name="ContestantScore">
           <Key>
@@ -218,6 +228,14 @@
           <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="FullName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TallySheet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ContestantName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Answer" Type="Binary" Nullable="false" MaxLength="250" FixedLength="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -324,6 +342,15 @@
                 <ScalarProperty Name="FullName" ColumnName="FullName" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TallySheets">
+            <EntityTypeMapping TypeName="QuizBeeModel.TallySheet">
+              <MappingFragment StoreEntitySet="TallySheet">
+                <ScalarProperty Name="Answer" ColumnName="Answer" />
+                <ScalarProperty Name="ContestantName" ColumnName="ContestantName" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

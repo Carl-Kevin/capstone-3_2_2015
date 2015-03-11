@@ -34,5 +34,6 @@ namespace Win.App.Server.DataSource
         public virtual DbSet<GQuiz> GQuizs { get; set; }
         public virtual DbSet<GContestantScore> GContestantScores { get; set; }
         public virtual DbSet<AdminAccount> AdminAccounts { get; set; }
+        public virtual DbSet<TallySheet> TallySheets { get; set; }
     }
 }
